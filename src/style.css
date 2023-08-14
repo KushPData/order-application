@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.create-button-container {
+    display: flex;
+    justify-content: right;
+}
+
+.button {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    margin: 40px;
+    margin-right: 75px;
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: rgb(238, 222, 251);
+    box-shadow: 2px 2px 4px black;
+}
+
+h1 {
+    font-size: 52px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.list-container {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 30px;
+    width: 90%;
+    padding: 10px;
+}
+
+.no-list {
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.d-none {
+    display: none;
+}

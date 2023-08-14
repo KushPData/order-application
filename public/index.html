@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="Kush Patel">
-        <meta name="description" content="home page for the order application" />
 
-        <title>Index</title>
-    </head>
-    
-    <body>
-        <div class="create-button-container">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Kush Patel">
+    <meta name="description" content="home page for the order application" />
+
+    <title>Index</title>
+
+    <link rel="stylesheet" href="./../src/style.css">
+</head>
+
+<body>
+    <div class="create-button-container">
+        <a href="./../src/form.html">
             <input type="button" value="Create" class="button" />
+        </a>
+    </div>
+
+    <div class="list-container">
+        <h1>List:</h1>
+
+        <div class="no-list">
+            Create an order summary to be displayed here!!!
         </div>
 
-        <div class="list-container">
-            <h1>List:</h1>
+        <table id="list">
 
-            <div class="no-list d-none">
-                Create an order summary to be displayed here!!!
-            </div>
+        </table>
 
-            <table id="list">
-                
-            </table>
-            
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
