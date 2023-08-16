@@ -21,9 +21,11 @@ body, html {
     margin: 40px;
     margin-right: 75px;
     border: 1px solid;
+    border-color: black;
     border-radius: 8px;
-    background-color: rgb(238, 222, 251);
+    background-color: #435fa3;
     box-shadow: 2px 2px 4px black;
+    color: white;
 }
 
 h1 {
@@ -47,3 +49,38 @@ h1 {
 .d-none {
     display: none;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+    border-right:1px solid #bbb;
+  }
+  
+  li:last-child {
+    border-right: none;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #435fa3;
+  }
