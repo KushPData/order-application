@@ -10,8 +10,8 @@ order.makeDropdownList(stakeholdersDetailsContainer, "VendorList", "vendor-list"
 order.makeDropdownList(stakeholdersDetailsContainer, "ShipTo", "ship-to", "Ship To: ", "CompanyName", "ship-to-feedback", "Please select a ship to address!!!");
 
 const logisticsContainer = document.querySelector(".logistics-details");
-order.makeDropdownList(logisticsContainer, "DeliveryMethod", "delivery-method", "Delivery Method: ","", "delivery-feedback", "Please select a delivery method!!!");
-order.makeDropdownList(logisticsContainer, "PaymentTerms", "payment-terms", "Payment Terms: ","", "payment-feedback", "Please select your payment terms!!!");
+order.makeDropdownList(logisticsContainer, "DeliveryMethod", "delivery-method", "Delivery Method: ", "", "delivery-feedback", "Please select a delivery method!!!");
+order.makeDropdownList(logisticsContainer, "PaymentTerms", "payment-terms", "Payment Terms: ", "", "payment-feedback", "Please select your payment terms!!!");
 
 const addButton = document.querySelector("#add-button");
 const productList = document.querySelector(".product-list");
@@ -24,8 +24,8 @@ const submit = document.getElementById("submit-button");
 submit.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const summary = document.querySelector(".summary");
-    summary.classList.remove("d-none");
+    // const summary = document.querySelector(".summary");
+    // summary.classList.remove("d-none");
 
     let object = {};
     let arr = [];
@@ -71,6 +71,9 @@ submit.addEventListener("click", (event) => {
     }
 
     if (finalValidator === true) {
+        const summary = document.querySelector(".summary");
+        summary.classList.remove("d-none");
+        
         for (const select of selectList.values()) {
             select.setAttribute('disabled', true);
         }
