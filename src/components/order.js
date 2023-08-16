@@ -73,7 +73,7 @@ submit.addEventListener("click", (event) => {
     if (finalValidator === true) {
         const summary = document.querySelector(".summary");
         summary.classList.remove("d-none");
-        
+
         for (const select of selectList.values()) {
             select.setAttribute('disabled', true);
         }

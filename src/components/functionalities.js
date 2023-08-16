@@ -91,7 +91,6 @@ export class functionalities {
             }
 
             place.appendChild(oneProduct);
-            console.log(place);
         })
     }
 
@@ -106,7 +105,6 @@ export class functionalities {
 
     validation(date, poNumber, vendor, shipTo, nameArray, quantityArray, unitArray, deliveryMethod, paymentTerms, gstVat) {
         let validator = [];
-        console.log(deliveryMethod);
         const validate = new functionalities();
 
         if (validate.validateEach(date)) {
