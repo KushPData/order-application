@@ -3,6 +3,7 @@
 import data from './../data/fields.json' assert { type: "json" };
 
 let numberOfProducts = 1;
+let arr = [];
 export class functionalities {
     makeDropdownList(place, jsonKey, elementId, elementDescription, value, feedbackName, feedback) {
         const jsonValueArray = data[jsonKey];
@@ -103,7 +104,7 @@ export class functionalities {
         return array;
     }
 
-    validation(date, poNumber, vendor, shipTo, nameArray, quantityArray, unitArray, deliveryMethod, paymentTerms, gstVat) {
+    validation(date, vendor, shipTo, nameArray, quantityArray, unitArray, deliveryMethod, paymentTerms, gstVat) {
         let validator = [];
         const validate = new functionalities();
 
@@ -111,14 +112,6 @@ export class functionalities {
             validator.push(true);
         } else {
             const place = document.querySelector(".date-feedback");
-            place.classList.remove("d-none");
-            validator.push(false);
-        }
-
-        if (validate.validateEach(poNumber)) {
-            validator.push(true);
-        } else {
-            const place = document.querySelector(".po-feedback");
             place.classList.remove("d-none");
             validator.push(false);
         }
@@ -210,5 +203,16 @@ export class functionalities {
         }
 
         return validator;
+    }
+
+    putValue(array) {
+        arr = array;
+        console.log(arr);
+    }
+
+
+    makeOrderList(place) {
+        console.log(place);
+        console.log(arr);
     }
 }

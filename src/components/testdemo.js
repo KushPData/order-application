@@ -1,23 +1,21 @@
-import orders from './../data/data.json' assert { type: "json" };
-
 export class test {
-
+    arr = [];
 
     add(data) {
-        orders.orders.push(data);
-        console.log(orders.orders);
+        this.arr.push(data);
+        this.startNumber += 1;
     }
 
     List() {
-        return orders.orders;
+        return this.arr;
     }
 
     remove() {
-        const length = orders.orders.length;
+        const length = this.arr.length;
         for(let i = 0; i < length; i++) {
-            orders.orders.pop();
+            this.arr.pop();
         }
-        console.log(orders.orders);
     }
+
 
 }
