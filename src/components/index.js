@@ -20,7 +20,7 @@ for (let key of keys) {
             row += "<td class='block'>" + JSON.parse(sessionStorage.getItem(key))[0].nameArray[i] + "</td>"
         }
         
-        row += "<td>" + JSON.parse(sessionStorage.getItem(key))[0].vendor + "</td><td>" + JSON.parse(sessionStorage.getItem(key))[0].shipTo + "</td></tr>"
+        row += "<td>" + JSON.parse(sessionStorage.getItem(key))[0].vendor + "</td><td>" + JSON.parse(sessionStorage.getItem(key))[0].shipTo + "</td><td><button class='table-button' id='edit-button' type='click'>Edit</button></td></tr>"
     }
 }
 
