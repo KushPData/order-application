@@ -17,7 +17,7 @@ for (let i = 0; i < orders.length; i++) {
         row += "<td>" + orders[i].nameArray[j] + "</td>"
     }
 
-    row += "<td>" + orders[i].vendor + "</td><td>" + orders[i].shipTo + "</td><td><a href='./../src/form.html'><button class='table-button' id='edit-button' type='click'>Edit</button></a></td></tr>"
+    row += "<td>" + orders[i].vendor + "</td><td>" + orders[i].shipTo + "</td><td><a href='./../src/edit.html'><button class='table-button' id='edit-button' type='click'>Edit</button></a></td></tr>"
 
 }
 
