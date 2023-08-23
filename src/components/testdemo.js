@@ -1,9 +1,12 @@
 export class test {
-    arr = [];
+    // arr = [];
 
     add(data) {
-        this.arr.push(data);
-        this.startNumber += 1;
+        // this.arr.push(data);
+        let orders = JSON.parse(window.sessionStorage.getItem("orders"));
+        orders.push(data);
+
+        window.sessionStorage.setItem("orders", JSON.stringify(orders));
     }
 
     List() {
@@ -16,6 +19,4 @@ export class test {
             this.arr.pop();
         }
     }
-
-
 }

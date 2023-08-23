@@ -9,19 +9,16 @@ let row = "";
 
 row += "<tr><th>P.O. Number</th><th>Date</th><th>Product(s)</th><th>Vendor</th><th>Ship To</th></tr>";
 
-let keys = Object.keys(sessionStorage);
-for (let key of keys) {
-    if (key !== "IsThisFirstTime_Log_From_LiveServer") {
-        console.log(typeof JSON.parse(sessionStorage.getItem(key)));
-        console.log(JSON.parse(sessionStorage.getItem(key))[0].date);
-        row += "<tr><td>" + key + "</td><td>" + JSON.parse(sessionStorage.getItem(key))[0].date + "</td>"
+const orders = JSON.parse(window.sessionStorage.getItem('orders'));
+for (let i = 0; i < orders.length; i++) {
+    row += "<tr><td>" + orders[i].poNumber + "</td><td>" + orders[i].date + "</td>"
 
-        for(let i = 0; i < JSON.parse(sessionStorage.getItem(key))[0].nameArray.length; i++) {
-            row += "<td class='block'>" + JSON.parse(sessionStorage.getItem(key))[0].nameArray[i] + "</td>"
-        }
-        
-        row += "<td>" + JSON.parse(sessionStorage.getItem(key))[0].vendor + "</td><td>" + JSON.parse(sessionStorage.getItem(key))[0].shipTo + "</td><td><button class='table-button' id='edit-button' type='click'>Edit</button></td></tr>"
+    for (let j = 0; j < orders[i].nameArray.length; j++) {
+        row += "<td>" + orders[i].nameArray[j] + "</td>"
     }
+
+    row += "<td>" + orders[i].vendor + "</td><td>" + orders[i].shipTo + "</td><td><button class='table-button' id='edit-button' type='click'>Edit</button></td></tr>"
+
 }
 
 list.innerHTML = row;

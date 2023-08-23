@@ -19,6 +19,7 @@ order.addProduct(addButton, productList, ["product-name", "quantity", "unit-pric
 
 
 let inputArray = [];
+// window.sessionStorage.setItem("orders", JSON.stringify([]));
 
 const submit = document.getElementById("submit-button");
 submit.addEventListener("click", (event) => {
@@ -91,21 +92,28 @@ submit.addEventListener("click", (event) => {
             }
         }
 
-        object = { "date": orderDate.value, "vendor": vendorValue, "shipTo": shipToValue, "deliveryMethod": deliveryMethodValue, "paymentTerms": paymentTermsValue, "againstQuote": againstQuote.value, "nameArray": nameArray, "quantityArray": quantityArray, "priceArray": priceArray, "discount": discount.value, "otherCosts": otherCosts.value, "gstVatRate": gstVatRate.value, "note": note.value };
-
-        test1.add(object);
-
-        const arr = test1.List();
-
-        const firstLetters = object.shipTo
+        const firstLetters = shipTo.value
             .split(' ')
             .map(word => word.charAt(0))
             .join('');
 
-        const numberOfOrders = sessionStorage.length;
-        const poString = firstLetters + "_" + numberOfOrders + "_" + object.date.toString();
+        let numberOfOrders;
 
-        window.sessionStorage.setItem(poString, JSON.stringify(arr));
+        if(JSON.parse(window.sessionStorage.getItem('orders')) === null) {
+            window.sessionStorage.setItem('orders', JSON.stringify([]));
+            numberOfOrders = 1;
+        } else {
+            numberOfOrders = JSON.parse(window.sessionStorage.getItem("orders")).length + 1;
+        }
+
+        // console.log(numberOfOrders);
+        const poString = firstLetters + "_" + numberOfOrders + "_" + orderDate.value.toString();
+
+        object = { "date": orderDate.value, "poNumber": poString, "vendor": vendorValue, "shipTo": shipToValue, "deliveryMethod": deliveryMethodValue, "paymentTerms": paymentTermsValue, "againstQuote": againstQuote.value, "nameArray": nameArray, "quantityArray": quantityArray, "priceArray": priceArray, "discount": discount.value, "otherCosts": otherCosts.value, "gstVatRate": gstVatRate.value, "note": note.value };
+
+        test1.add(object);
+
+        // console.log(JSON.parse(window.sessionStorage.getItem('orders')).length);
 
         alert("Order added!!! Go to the 'Order List' page to view it!!!");
 
