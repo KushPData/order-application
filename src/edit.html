@@ -1,0 +1,126 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Kush Patel">
+    <meta name="description" content="Order form">
+
+    <title>Vendor Form</title>
+
+    <link rel="stylesheet" href="./../src/style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="./../public/index.html">Order List</a></li>
+            <li><a class="active" href="#">Create Order</a></li>
+        </ul>
+    </nav>
+
+    <form class="form">
+
+        <div class="general-details">
+            <div class="general-details-item">
+                <label for="order-date">Date: </label>
+                <input class="input-box" type="date" id="order-date" name="order-date">
+                <div class="invalid-input d-none date-feedback">Please enter a valid date!!!</div>
+            </div>
+        </div>
+
+
+        <div class="stakeholders-details-container form-element">
+
+        </div>
+
+        <div class="product-details-container form-element">
+            <div class="product-list">
+                <div class="one-product" id="1">
+                    <div>
+                        <label for="product-name">Product Name/Description: </label>
+                        <input class="input-box" type="text" name="product-name" id="product-name">
+                        <div class="invalid-input d-none name-feedback">Please enter a product name!!!</div>
+                    </div>
+
+                    <div>
+                        <label for="quantity">Qty Approx: </label>
+                        <input class="input-box" type="text" name="quantity" id="quantity">
+                        <div class="invalid-input d-none quantity-feedback">Please enter the quantity of product!!!
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="unit-price">Unit Price: </label>
+                        <input class="input-box" type="text" name="unit-price" id="unit-price">
+                        <div class="invalid-input d-none price-feedback">Please enter the unit price of the product!!!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="button" id="add-button" type="click">Add a Product</button>
+            </div>
+        </div>
+
+        <div class="logistics-details-container form-element">
+            <div class="logistics-details">
+
+            </div>
+
+            <div class="item">
+                <label for="against-quote">Against Quote Number: </label>
+                <input class="input-box" type="text" id="against-quote" name="against-quote">
+            </div>
+        </div>
+
+        <div class="other-details-container form-element">
+            <div class="other-details-item">
+                <label for="discount">Discount: </label>
+                <input class="input-box" type="text" name="discount" id="discount">
+            </div>
+
+            <div class="other-details-item">
+                <label for="other-costs">Other Costs: </label>
+                <input class="input-box" type="text" name="other-costs" id="other-costs">
+            </div>
+
+            <div class="other-details-item">
+                <label for="gst-vat-rate">GST/VAT Rate: </label>
+                <input class="input-box" type="text" name="gst-vat-rate" id="gst-vat-rate">
+                <div class="invalid-input d-none gst-vat-rate-feedback">Please enter the GST/VAT Rate!!!</div>
+            </div>
+
+            <div class="other-details-item">
+                <label for="note">Note: </label>
+                <input class="input-box" type="text" name="note" id="note">
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="button" id="submit-button" type="click">Submit</button>
+        </div>
+
+    </form>
+    <div class="summary d-none">
+        <table id="table">
+
+        </table>
+        <div class="address">
+            <p>Radix Software Services Pvt Ltd</p>
+            <p>Ekyarth 2nd, 3rd, 4th, 6th Floor, Plot No. 51, Nr Vandemataram Fabula, B/H Nirma University, Chharodi, Ahmedabad-382481</p>
+            <p>Phone No: +91-79-35200685</p>
+        </div>
+
+        <div class="button-container">
+            <button class="button" id="edit-button" type="click">Edit</button>
+        </div>
+    </div>
+
+    <script type="module" src="./../src/components/order.js">
+
+    </script>
+</body>
+
+</html>
