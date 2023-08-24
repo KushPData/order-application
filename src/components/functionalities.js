@@ -215,4 +215,56 @@ export class functionalities {
         console.log(place);
         console.log(arr);
     }
+
+    editDropdownList(place, jsonKey, elementId, elementDescription, value, feedbackName, feedback, index, sessionKey) {
+        const jsonValueArray = data[jsonKey];
+
+        const item = document.createElement("div");
+        item.classList.add("item");
+
+        const label = document.createElement("label");
+        label.setAttribute("for", elementId);
+        label.textContent = elementDescription;
+        item.appendChild(label);
+
+        const select = document.createElement("select");
+        select.setAttribute("class", "input-box");
+        select.setAttribute("name", elementId);
+        select.setAttribute("id", elementId);
+
+        const defaultOption = document.createElement("option");
+        defaultOption.setAttribute("value", "");
+        defaultOption.textContent = "--- None Selected ---";
+        select.appendChild(defaultOption);
+
+        for (let i = 0; i < jsonValueArray.length; i++) {
+            let option = document.createElement("option");
+            if (typeof jsonValueArray[i] === 'object') {
+                option.setAttribute("value", jsonValueArray[i][value]);
+                option.textContent = jsonValueArray[i][value];
+                console.log(jsonValueArray[i][value]);
+                console.log(JSON.parse(sessionStorage.getItem('orders'))[index][sessionKey]);
+                if(jsonValueArray[i][value] === JSON.parse(sessionStorage.getItem('orders'))[index][sessionKey]) {
+                    option.setAttribute("selected", true);
+                }
+            } else {
+                option.setAttribute("value", jsonValueArray[i]);
+                option.textContent = jsonValueArray[i];
+                if(jsonValueArray[i] === JSON.parse(sessionStorage.getItem('orders'))[index][sessionKey]) {
+                    option.setAttribute("selected", true);
+                }
+            }
+            select.appendChild(option);
+        }
+
+        item.appendChild(select);
+
+        const feedbackElement = document.createElement("div");
+        feedbackElement.classList.add("invalid-input", "d-none", feedbackName);
+        feedbackElement.textContent = feedback;
+
+        item.appendChild(feedbackElement);
+
+        place.appendChild(item);
+    }
 }

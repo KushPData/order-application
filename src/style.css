@@ -28,12 +28,14 @@ body, html {
     color: white;
 }
 
-.list-container {
+.list-container, .edit-section {
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 30px;
     width: 90%;
-    padding: 10px;
+    padding: 30px;
+    border: 1px solid;
+    border-radius: 10px;
 }
 
 .no-list {
